@@ -4,7 +4,7 @@ import asyncio
 
 
 class Observer:
-    def __init__(self, id=None, sender=None, port=9000, host="localhost") -> None:
+    def __init__(self, id=None, sender=None, port=9000, host="10.10.0.56") -> None:
         if (id is None):
             id = uuid.uuid1()
         self._id = id
@@ -26,7 +26,7 @@ class Observer:
 
 
 class TCPSender:
-    def __init__(self, port=9000, host="localhost") -> None:
+    def __init__(self, port=9000, host="10.10.0.56") -> None:
         self.host = host
         self.port = port
 

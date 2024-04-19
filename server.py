@@ -18,7 +18,7 @@ def main():
 
 
 async def run_server():
-    HOST, PORT = "localhost", 9000
+    HOST, PORT = "10.10.0.56", 9000
     server = await asyncio.start_server(handle_client, HOST, PORT)
     async with server:
         await server.serve_forever()
@@ -35,7 +35,7 @@ async def handle_client(reader, writer):
     response = {"status": "good"}
     match(action):
         case "handshake":
-            address = "localhost"
+            address = "10.10.0.56"
             print(f"Dirección para el cliente: {address}")
             add_client(source, address)
             response = get_handshake_config()

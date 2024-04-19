@@ -57,7 +57,7 @@ async def main():
 
 async def check_msg(port):
     print(f"Escuchando en el puerto: {port}")
-    server = await asyncio.start_server(handle_data_from_server, "localhost", port)
+    server = await asyncio.start_server(handle_data_from_server, "10.10.0.56", port)
     print("Conjunto de escuchadores")
     async with server:
         serverRoutine = await server.serve_forever()
